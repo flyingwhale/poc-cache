@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+
+services: 
+  - mongodb
+  - memcached
+  - redis-server  
+
+before_script:
+  - php --info
+  - composer install --dev
+  - phpenv config-add tests/travis/php.ini
+
+script:
+  - php tests/travis/mongo_version.php
+  - vendor/bin/phpunit --verbose
+
