@@ -19,7 +19,6 @@ namespace Poc\Cache\CacheImplementation;
 
 use Optionable;
 use Poc\Cache\CacheImplementation\CacheParams;
-use Poc\Poc;
 
 abstract class Cache implements CacheInterface, CacheParams
 {

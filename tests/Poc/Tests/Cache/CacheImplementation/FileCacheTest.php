@@ -20,7 +20,12 @@ class FileCacheTest extends CacheTest
 
     public function setUp_ ()
     {
+        try{
         $this->cache = new FileCache(array(CacheParams::PARAM_TTL => parent::TTL));
+        }
+        catch(\Exception $e){
+
+        }
     }
 
 }

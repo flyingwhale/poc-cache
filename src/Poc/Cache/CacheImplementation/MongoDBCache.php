@@ -19,8 +19,8 @@
 
 namespace Poc\Cache\CacheImplementation;
 
-use Poc\Exception\CacheNotReachableException;
-use Poc\Exception\DriverNotFoundException;
+use Poc\Cache\Exception\CacheNotReachableException;
+use Poc\Cache\Exception\DriverNotFoundException;
 
 class MongoDBCache extends Cache
 {
