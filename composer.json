@@ -1,5 +1,5 @@
 {
-    "name": "poc/cache",
+    "name": "flyingwhale/poc-cache",
     "license": "Apache-2.0",
     "type": "library",
     "keywords": ["cache", "caching", "poc"],
@@ -24,6 +24,5 @@
         "psr-0": { "Poc": "src/" }
     },
 
-    "bin": ["bin/console"],
     "minimum-stability": "dev" 
 }
