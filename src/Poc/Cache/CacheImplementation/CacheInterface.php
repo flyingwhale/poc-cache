@@ -27,5 +27,5 @@ interface CacheInterface
 
     public function clearItem ($key);
 
-    public function cacheSpecificStore ($key, $output);
+    public function cacheSpecificStore ($key, $output, $ttl=null);
 }

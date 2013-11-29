@@ -88,14 +88,14 @@ class MongoDBCache extends Cache
 
     }
 
-    public function cacheSpecificStore ($key, $output)
+    public function cacheSpecificStore ($key, $output, $ttl=null)
     {
         $keyValueCollection = $this->getCollection();
 
         $keyValue = $this->findKeyValueObj($key);
 
         if (! $keyValue) {
-            $keyValue = array('key' => $key, 'value' => $output, 'expire' => time() + $this->ttl);
+            $keyValue = array('key' => $key, 'value' => $output, 'expire' => time() + $this->getRealTtl($ttl));
         } else {
             $keyValue['value'] = $output;
             $keyValue['expire'] = time() + $this->ttl;

@@ -72,9 +72,9 @@ class PredisCache extends Cache
         $this->redis->del($key);
     }
 
-    public function cacheSpecificStore ($key, $output)
+    public function cacheSpecificStore ($key, $output, $ttl=null)
     {
         $this->redis->set($key, $output);
-        $this->redis->expire($key, $this->ttl);
+        $this->redis->expire($key, $this->getRealTtl($ttl));
     }
 }

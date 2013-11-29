@@ -55,4 +55,17 @@ abstract class Cache implements CacheInterface, CacheParams
         return $this->ttl;
     }
 
+    protected  function getRealTtl($ttl=null)
+    {
+        if($ttl == null)
+        {
+            $ttl_ = $this->ttl;
+        }
+        else
+        {
+            $ttl_ = $ttl;
+        }
+        return $ttl_;
+    }
+
 }

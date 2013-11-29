@@ -80,8 +80,8 @@ class MemcachedCache extends Cache
         $this->memcache->delete($key);
     }
 
-    public function cacheSpecificStore ($key, $output)
+    public function cacheSpecificStore ($key, $output, $ttl=null)
     {
-        $this->memcache->set($key, $output, $this->compression, $this->ttl);
+        $this->memcache->set($key, $output, $this->compression, $this->getRealTtl($ttl));
     }
 }

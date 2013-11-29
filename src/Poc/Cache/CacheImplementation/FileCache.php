@@ -77,12 +77,13 @@ class FileCache extends Cache
         }
     }
 
-    public function cacheSpecificStore ($key, $output)
+    public function cacheSpecificStore ($key, $output, $ttl=null)
     {
+
         $fp = fopen($this->file . $key, 'w');
         fwrite($fp, $output);
         fclose($fp);
-        $this->writeTtl($this->ttl, $key);
+        $this->writeTtl($this->getRealTtl($ttl), $key);
     }
 
     public function writeTtl ($ttl, $key)
